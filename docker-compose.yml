@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  frontend:
+    container_name: frontend
+    restart: always
+    build:
+      context: frontend
+    volumes:
+      - ./frontend:/usr/src/app
+      - frontend_node_modules:/usr/src/app/node_modules
+    stdin_open: true
+    ports:
+      - 3000:3000
+
+volumes:
+  frontend_node_modules:
